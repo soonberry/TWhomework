@@ -5,5 +5,6 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println("This is what I use for Pos System on Git.");
+        System.out.println("test a plus");
     }
 }
