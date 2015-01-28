@@ -8,7 +8,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        System.out.println("Welcome to Pos");
+        System.out.println("Welcome to the new Pos");
 
         Pos pos=new Pos();
 
