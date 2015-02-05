@@ -1,6 +1,6 @@
 package pos;
 
-import parser.ReadTXT;
+import parser.Parser;
 
 import java.util.*;
 
@@ -76,8 +76,8 @@ public class Cart {
 
     private List<String> readShoppingList() {
 
-        ReadTXT readItemList=new ReadTXT();
-        List<String> cartL=readItemList.readTxt("cart.txt");
+        Parser readItemList=new Parser();
+        List<String> cartL=readItemList.parse("cart.txt");
 
         return cartL;
 

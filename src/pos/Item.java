@@ -1,6 +1,6 @@
 package pos;
 
-import parser.ReadTXT;
+import parser.Parser;
 
 import java.util.List;
 
@@ -20,8 +20,8 @@ public class Item {
 
     public Item(String id){
 
-        ReadTXT readItemList=new ReadTXT();
-        List<String> itemL=readItemList.readTxt("itemlist.txt");
+        Parser readItemList=new Parser();
+        List<String> itemL=readItemList.parse("itemlist.txt");
 
         for(String i:itemL){
 
@@ -34,8 +34,8 @@ public class Item {
     }
 
     public boolean hasSecHalf(){
-        ReadTXT readDiscount=new ReadTXT();
-        List<String> itemDis=readDiscount.readTxt("second_half_price_promotion.txt");
+        Parser readDiscount=new Parser();
+        List<String> itemDis=readDiscount.parse("second_half_price_promotion.txt");
         for(String i:itemDis){
             if(i.equals(this.getID())) {
                 return true;
@@ -45,8 +45,8 @@ public class Item {
 
     }
     public boolean hasDiscount(){
-        ReadTXT readDiscount=new ReadTXT();
-        List<String> itemDis=readDiscount.readTxt("discount_promotion.txt");
+        Parser readDiscount=new Parser();
+        List<String> itemDis=readDiscount.parse("discount_promotion.txt");
         for(String i:itemDis){
             if((i.split(":")[0]).equals(this.getID())) {
                 this.discount=(Double.valueOf((i.split(":"))[1]))*0.01;
